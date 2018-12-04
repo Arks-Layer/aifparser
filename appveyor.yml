@@ -14,8 +14,7 @@ after_build:
 - cmd: git rev-parse --short %APPVEYOR_REPO_COMMIT%>%TMP%\gitshort.txt
 - cmd: set /P GITSHORT=<%TMP%\gitshort.txt
 - set BUILD_ARCHIVE=%APPVEYOR_REPO_BRANCH%-%GITSHORT%-%CONFIGURATION%-texteditor
-- cmd: cd
-- cmd: cd nova-texteditor/bin
+- cmd: cd psnova-texteditor/bin
 - cmd: cd %CONFIGURATION%
 - cmd: 7z a %BUILD_ARCHIVE% *.* -xr!.gitignore
 - appveyor PushArtifact %BUILD_ARCHIVE%
