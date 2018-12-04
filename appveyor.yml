@@ -18,6 +18,7 @@ after_build:
 - cmd: cd %CONFIGURATION%
 - cmd: 7z a %BUILD_ARCHIVE% *.* -xr!.gitignore
 - appveyor PushArtifact %BUILD_ARCHIVE%
+- cmd: cd
 - cmd: cd ../..
 - set BUILD_ARCHIVE=%APPVEYOR_REPO_BRANCH%-%GITSHORT%-%CONFIGURATION%-textinserter.7z
 - cmd: cd psnova-textinserter/bin
