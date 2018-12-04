@@ -13,17 +13,17 @@ before_build:
 after_build:
 - cmd: git rev-parse --short %APPVEYOR_REPO_COMMIT%>%TMP%\gitshort.txt
 - cmd: set /P GITSHORT=<%TMP%\gitshort.txt
-- set BUILD_ARCHIVE=%APPVEYOR_REPO_BRANCH%-%GITSHORT%-%CONFIGURATION%-texteditor
+- set BUILD_ARCHIVE=%APPVEYOR_REPO_BRANCH%-%GITSHORT%-%CONFIGURATION%-texteditor.7z
 - cmd: cd psnova-texteditor/psnova-texteditor/bin
 - cmd: cd %CONFIGURATION%
 - cmd: 7z a %BUILD_ARCHIVE% *.* -xr!.gitignore
-- appveyor PushArtifact %BUILD_ARCHIVE%.7z
+- appveyor PushArtifact %BUILD_ARCHIVE%
 - cmd: cd ../../..
 - set BUILD_ARCHIVE=%APPVEYOR_REPO_BRANCH%-%GITSHORT%-%CONFIGURATION%-textinserter.7z
 - cmd: cd psnova-textinserter/bin
 - cmd: cd %CONFIGURATION%
 - cmd: 7z a %BUILD_ARCHIVE% *.* -xr!.gitignore
-- appveyor PushArtifact %BUILD_ARCHIVE%.7z
+- appveyor PushArtifact %BUILD_ARCHIVE%
 - cmd: cd ../../../..
 
 build:
