@@ -26,6 +26,6 @@ after_build:
 - cmd: cd ..\..\..
 
 build:
-  project: "psnova-texteditor\psnova-texteditor.sln"
+  project: psnova-texteditor\psnova-texteditor.sln
   verbosity: quiet
 
