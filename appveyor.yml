@@ -17,13 +17,13 @@ after_build:
 - cmd: cd psnova-texteditor/psnova-texteditor/bin
 - cmd: cd %CONFIGURATION%
 - cmd: 7z a %BUILD_ARCHIVE% *.* -xr!.gitignore
-- appveyor PushArtifact %BUILD_ARCHIVE%
+- appveyor PushArtifact %BUILD_ARCHIVE%.7z
 - cmd: cd ../../..
 - set BUILD_ARCHIVE=%APPVEYOR_REPO_BRANCH%-%GITSHORT%-%CONFIGURATION%-textinserter.7z
 - cmd: cd psnova-textinserter/bin
 - cmd: cd %CONFIGURATION%
 - cmd: 7z a %BUILD_ARCHIVE% *.* -xr!.gitignore
-- appveyor PushArtifact %BUILD_ARCHIVE%
+- appveyor PushArtifact %BUILD_ARCHIVE%.7z
 - cmd: cd ../../../..
 
 build:
